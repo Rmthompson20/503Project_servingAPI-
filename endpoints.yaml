@@ -1,2 +1,7 @@
 /: SHOW SERVER_VERSION
 /tz: SHOW TIMEZONE
+/weather: SELECT * FROM clean_weather 
+/location: SELECT * FROM location 
+/systems: SELECT * FROM systems
+/weather_report: SELECT * FROM weather_report 
+/weather_conditions: SELECT * FROM weather_conditions
