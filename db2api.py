@@ -51,3 +51,27 @@ def weather_by_page(page):
         res = con.execute(text(query), {'off': 50*int(page)})
         return [r._asdict() for r in res]
 
+@app.get("/systems/{page}")
+def systems_by_page(page):
+     with eng.connect() as con:
+        query = """
+                SELECT *
+                FROM systems
+                LIMIT 50
+                OFFSET :off
+                """
+        res = con.execute(text(query), {'off': 50*int(page)})
+        return [r._asdict() for r in res]
+
+@app.get("/weather_report/{page}")
+def weather_report_by_page(page):
+     with eng.connect() as con:
+        query = """
+                SELECT *
+                FROM weather_report
+                LIMIT 50
+                OFFSET :off
+                """
+        res = con.execute(text(query), {'off': 50*int(page)})
+        return [r._asdict() for r in res]
+
