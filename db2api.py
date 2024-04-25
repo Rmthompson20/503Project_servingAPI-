@@ -44,7 +44,8 @@ def weather_by_page(page):
      with eng.connect() as con:
         query = """
                 SELECT *
-                FROM weather
+                FROM clean_weather
+                ORDER BY index_id
                 LIMIT 50
                 OFFSET :off
                 """
