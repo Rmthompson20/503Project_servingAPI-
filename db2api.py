@@ -45,7 +45,6 @@ def weather_by_page(page):
         query = """
                 SELECT *
                 FROM weather
-                ORDER BY insert_id
                 LIMIT 50
                 OFFSET :off
                 """
