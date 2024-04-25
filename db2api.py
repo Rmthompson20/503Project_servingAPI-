@@ -39,13 +39,13 @@ with open("endpoints.yaml") as f:
 # Custom Endpoints
 #------------------------------------------------
 
-@app.get("/movies/{page}")
-def movies_by_page(page):
+@app.get("/weather/{page}")
+def weather_by_page(page):
      with eng.connect() as con:
         query = """
                 SELECT *
-                FROM movies
-                ORDER BY index
+                FROM weather
+                ORDER BY insert_id
                 LIMIT 50
                 OFFSET :off
                 """
